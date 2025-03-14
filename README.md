@@ -16,3 +16,5 @@ This project implements a **self-driving car** using **NVIDIA's Convolutional Ne
 1. Clone the repository:
    ```bash
    git clone https://github.com/AdarshSorout/Self-Driving-Car-using-NVIDIA-s-End-to-End-CNN-Model.git
+## Demo Video 🎥
+[![Demo Video]([https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/Uf29VDFiUs8)]
