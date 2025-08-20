@@ -69,26 +69,9 @@ while i < num_images:
 
     print(f"Steering angle: {degrees:.2f}° (predicted) | {ys[i] * 180 / np.pi:.2f}° (actual)")
 
-    # Draw steering direction lines on the frame
-    height, width, _ = full_image.shape
-    center_x, center_y = width // 2, height - 50  # Define center position
-
-    # Calculate end points of the lines based on predicted angle
-    length = 100  # Length of the steering lines
-    angle_rad = -degrees * np.pi / 180  # Convert angle to radians
-
-    left_x = int(center_x - length * np.sin(angle_rad))
-    left_y = int(center_y - length * np.cos(angle_rad))
-
-    right_x = int(center_x + length * np.sin(angle_rad))
-    right_y = int(center_y - length * np.cos(angle_rad))
-
-    # Draw two green steering lines
-    cv2.line(full_image, (center_x, center_y), (left_x, left_y), (0, 255, 0), 4)
-    cv2.line(full_image, (center_x, center_y), (right_x, right_y), (0, 255, 0), 4)
-
-    # Add label showing steering angle
-    cv2.putText(full_image, f"Angle: {degrees:.2f}°", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+    # Add label showing steering angle (only text, no lines)
+    cv2.putText(full_image, f"Angle: {degrees:.2f}°", (50, 50),
+                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
     # Display video frame
     cv2.imshow("frame", cv2.cvtColor(full_image, cv2.COLOR_RGB2BGR))
